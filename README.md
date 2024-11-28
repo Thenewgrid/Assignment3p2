@@ -2,7 +2,10 @@
 
 ### Task1
 
-Make a new virtual server (droplet).
+Make two new virtual servers (droplets):
+- Make the droplets from digital ocean.
+- Give them each the tag web.
+- Follow the configuration below for each droplet.
 
 #### Step1
 
