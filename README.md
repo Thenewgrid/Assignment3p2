@@ -294,7 +294,26 @@ sudo ufw enable
 1. Go to Digital Ocean
 2. Go to the Create button at the top.
 3. Click on load balancer.
-4. follow the configuration steps.
+
+**Load Balancer**
+
+The majority of settings should remain as default.
+
+Load balancer type should be Regional.
+
+Datacenter should be San Francisco 3.
+
+Network visibility should be external and public.
+
+Under **Connect Droplets**, enter the tag `web`.
+
+This should match the tag you gave each droplet.
+
+Once you do every droplet with that tag will be added to the load balancer.
+
+Leave the rest of the settings as the defaults and click `Create Load Balancer`.
+
+> It will take some time to set up the load balancer.
 
 ### Task3
 
