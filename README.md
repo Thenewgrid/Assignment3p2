@@ -4,7 +4,7 @@
 
 Make two new virtual servers (droplets):
 - Make the droplets from digital ocean.
-- Give them each the tag web.
+- Give each droplet the tag; web.
 - Follow the configuration below for each droplet.
 
 #### Step1
@@ -288,6 +288,13 @@ sudo ufw enable
 ```
 
 ### Task2
+
+#### Create a Load balancer
+
+1. Go to Digital Ocean
+2. Go to the Create button at the top.
+3. Click on load balancer.
+4. follow the configuration steps.
 
 ### Task3
 
