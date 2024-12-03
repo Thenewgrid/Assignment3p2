@@ -76,7 +76,7 @@ Leave the rest of the settings as the defaults and click `Create Load Balancer`.
 
 **Setup environment for server1 and server2**
 
-OPen your terminal.
+Open your terminal.
 
 Login into server1 using SSH.
 
