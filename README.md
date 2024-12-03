@@ -144,6 +144,8 @@ git clone https://git.sr.ht/~nathan_climbs/2420-as3-p2-start
 
 ### Task4
 
+**Complete the steps bellow for both server1 and server2**
+
 #### Step1
 
 Create a new system user with the following:
