@@ -5,7 +5,137 @@
 Make two new virtual servers (droplets):
 - Make the droplets from digital ocean.
 - Give each droplet the tag; web.
-- Follow the configuration below for each droplet.
+- Name the first droplet server1.
+- Name the second droplet server2.
+
+**Server1**
+
+Go to Digital Ocean and click the green `Create` button at the top of the page.
+
+Once you click it you should see the option called `Droplets`, click it.
+
+Go through the set up for the droplet, with the following configuration steps;
+
+- `Choose Region` = San Francisco
+- `Datacenter` = SFO3
+- `Choose an image` = Custom images, choose the arch linux image
+- `Choose Size` = Basic
+- `CPU options` = Regular, and 4/mo or 6/mo, either one is fine
+- `Choose Authentication Method` = select your SSH key
+- `Quantity` = 1 Droplet
+- `Hostname` = server1
+- `Tags` = web
+
+Click `Create Droplet`.
+
+**Server2**
+
+Go through the set up for the droplet, with the following configuration steps;
+
+- `Choose Region` = San Francisco
+- `Datacenter` = SFO3
+- `Choose an image` = Custom images, choose the arch linux image
+- `Choose Size` = Basic
+- `CPU options` = Regular, and 4/mo or 6/mo, either one is fine
+- `Choose Authentication Method` = select your SSH key
+- `Quantity` = 1 Droplet
+- `Hostname` = server2
+- `Tags` = web
+
+Click `Create Droplet`.
+
+### Task2
+
+#### Create a Load balancer
+
+1. Go to Digital Ocean
+2. Go to the Create button at the top.
+3. Click on load balancer.
+
+**Load Balancer**
+
+The majority of settings should remain as default.
+
+Load balancer type should be Regional.
+
+Datacenter should be San Francisco 3.
+
+Network visibility should be external and public.
+
+Under **Connect Droplets**, enter the tag `web`.
+
+This should match the tag you gave each droplet.
+
+Once you do every droplet with that tag will be added to the load balancer.
+
+Leave the rest of the settings as the defaults and click `Create Load Balancer`.
+
+> It will take some time to set up the load balancer.
+
+### Task3
+
+**Setup environment for server1 and server2**
+
+OPen your terminal.
+
+Login into server1 using SSH.
+
+```code
+ssh -i .ssh/ssh-key arch@droplet-ip
+```
+
+`.ssh/ssh-key`, is the path to your private SSH key.
+
+`droplet-ip`, is the ip address of server1.
+
+Open another tab in your terminal and login into server2.
+
+```code
+ssh -i .ssh/ssh-key arch@droplet-ip
+```
+
+`.ssh/ssh-key`, is the path to your private SSH key.
+
+`droplet-ip`, is the ip address of server2.
+
+**Inside server1 and server2;**
+
+- Update the serevr.
+- Download vim.
+- Download git.
+- Download tree.
+
+Update the server.
+
+```bash
+sudo pacman -Syu
+```
+
+Download vim.
+
+```bash
+sudo pacman -S vim
+```
+
+Download git.
+
+```bash
+sudo pacman -S git
+```
+
+Download tree.
+
+```bash
+sudo pacman -S tree
+```
+
+Run the following command to get the startup files.
+
+```bash
+git clone https://git.sr.ht/~nathan_climbs/2420-as3-p2-start
+```
+
+### Task4
 
 #### Step1
 
@@ -286,35 +416,3 @@ Enable the firewall.
 ```bash
 sudo ufw enable
 ```
-
-### Task2
-
-#### Create a Load balancer
-
-1. Go to Digital Ocean
-2. Go to the Create button at the top.
-3. Click on load balancer.
-
-**Load Balancer**
-
-The majority of settings should remain as default.
-
-Load balancer type should be Regional.
-
-Datacenter should be San Francisco 3.
-
-Network visibility should be external and public.
-
-Under **Connect Droplets**, enter the tag `web`.
-
-This should match the tag you gave each droplet.
-
-Once you do every droplet with that tag will be added to the load balancer.
-
-Leave the rest of the settings as the defaults and click `Create Load Balancer`.
-
-> It will take some time to set up the load balancer.
-
-### Task3
-
-### Task4
