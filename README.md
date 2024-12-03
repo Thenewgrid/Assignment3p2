@@ -104,6 +104,7 @@ ssh -i .ssh/ssh-key arch@droplet-ip
 - Download vim.
 - Download git.
 - Download tree.
+- Download nginx.
 
 Update the server.
 
@@ -127,6 +128,12 @@ Download tree.
 
 ```bash
 sudo pacman -S tree
+```
+
+Download nginx.
+
+```bash
+sudo pacman -S nginx
 ```
 
 Run the following command to get the startup files.
