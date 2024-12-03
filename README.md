@@ -152,6 +152,7 @@ Create a new system user with the following:
 - Sub directories bin and HTML.
 - The generate_index file inside `webgen/bin`.
 - The index.html file inside `webgen/HTML`.
+- The files, file-one and file-two inside `webgen/documents`.
 - Ownership of home directory and any files and sub directories within.
 
 ```bash
@@ -175,7 +176,7 @@ sudo mkdir -p /var/lib/webgen
 The following command will create two sub directories called `bin` and `HTML` inside the webgen directory.
 
 ```bash
-sudo mkdir -p /var/lib/webgen/{bin,HTML}
+sudo mkdir -p /var/lib/webgen/{bin,HTML,documents}
 ```
 
 To move the `generate_index` file inside the `webgen/bin` directory, run the following.
@@ -188,6 +189,12 @@ Now put an `index.html` file inside the HTML directory.
 
 ```bash
 sudo touch /var/lib/webgen/HTML/index.html
+```
+
+Now put `file-one` and `file-two` inside `documents` directory.
+
+```bash
+sudo touch /var/lib/webgen/documents/{file-one,file-two}
 ```
 
 To give ownership of the webgen directory and any files or sub directories inside it to webgen, run;
