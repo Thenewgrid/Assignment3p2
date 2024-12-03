@@ -175,7 +175,7 @@ sudo mkdir -p /var/lib/webgen
 
 `-p` : Makes directories within directories.
 
-The following command will create two sub directories called `bin` and `HTML` inside the webgen directory.
+The following command will create three sub directories called `bin`, `HTML` and `documents` inside the webgen directory.
 
 ```bash
 sudo mkdir -p /var/lib/webgen/{bin,HTML,documents}
