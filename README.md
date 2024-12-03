@@ -205,6 +205,19 @@ To give ownership of the webgen directory and any files or sub directories insid
 sudo chown -R webgen:webgen /var/lib/webgen
 ```
 
+Run tree command to make sure your files follow the same directory.
+
+```bash
+/var/lib/webgen/
+├── bin
+│   └── generate_index
+├── documents
+│   ├── file-one
+│   └── file-two
+└── HTML
+    └── index.html
+```
+
 #### Step2
 
 Make service and timer unit files:
