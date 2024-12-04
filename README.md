@@ -424,6 +424,12 @@ To make the site available we make a symlink that is tored in `sites-enabled`.
 sudo ln -s /etc/nginx/sites-available/webgen.conf /etc/nginx/sites-enabled/webgen.conf
 ```
 
+To generate our html page run the `generate-index.serivce` file.
+
+```bash
+sudo systemctl start generate-index.serivce
+```
+
 Run `sudo nginx -t` to see if the `nginx.conf` file is running properly.
 
 ```bash
