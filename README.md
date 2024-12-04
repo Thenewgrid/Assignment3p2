@@ -326,7 +326,15 @@ WantedBy=timers.target
 
 To active the timer run `sudo systemctl start generate-index.timer`.
 
+```bash
+sudo systemctl start generate-index.timer
+```
+
 To see if the timer will execute the service file, run `systemctl status generate-index.timer`.
+
+```bash
+systemctl status generate-index.timer
+```
 
 #### Step3
 
