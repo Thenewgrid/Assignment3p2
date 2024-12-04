@@ -207,7 +207,13 @@ sudo vim /var/lib/webgen/documents/file-one
 Add the following text.
 
 ```code
-This is file-one.
+This is file-one from server1.
+```
+
+In server2;
+
+```code
+This is file-one from server2.
 ```
 
 Now for file-two.
@@ -218,7 +224,12 @@ sudo vim /var/lib/webgen/documents/file-two
 Add the following text.
 
 ```code
-This is file-two.
+This is file-two from server1.
+```
+In server2;
+
+```code
+This is file-two from server2.
 ```
 
 To give ownership of the webgen directory and any files or sub directories inside it to webgen, run;
@@ -425,6 +436,14 @@ sudo ln -s /etc/nginx/sites-available/webgen.conf /etc/nginx/sites-enabled/webge
 ```
 
 To generate our html page run the `generate-index.serivce` file.
+
+First we should make it executable.
+
+```bash
+sudo chmod +x /var/lib/webgen/bin/generate_index
+```
+
+Now we run it.
 
 ```bash
 sudo systemctl start generate-index
