@@ -426,6 +426,10 @@ sudo ln -s /etc/nginx/sites-available/webgen.conf /etc/nginx/sites-enabled/webge
 
 Run `sudo nginx -t` to see if the `nginx.conf` file is running properly.
 
+```bash
+sudo nginx -t
+```
+
 Start the service
 
 ```bash
