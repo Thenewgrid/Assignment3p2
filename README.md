@@ -199,7 +199,7 @@ Now put `file-one` and `file-two` inside `documents` directory.
 sudo touch /var/lib/webgen/documents/{file-one,file-two}
 ```
 
-Inside `file-one` and `file-two` add text.
+**Inside `file-one` and `file-two` add text.**
 
 ```bash
 sudo vim /var/lib/webgen/documents/file-one
@@ -216,7 +216,7 @@ In server2;
 This is file-one from server2.
 ```
 
-Now for file-two.
+**Now for file-two.**
 
 ```bash
 sudo vim /var/lib/webgen/documents/file-two
@@ -238,7 +238,7 @@ To give ownership of the webgen directory and any files or sub directories insid
 sudo chown -R webgen:webgen /var/lib/webgen
 ```
 
-Run tree command to make sure your files follow the same directory.
+Run tree command to make sure your files follow the same directory tree.
 
 ```bash
 tree /var/lib/webgen/
@@ -415,7 +415,7 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name 146.190.124.7;
+        server_name server-ip;
 
         root  /var/lib/webgen/HTML;
         index index.html;
@@ -429,7 +429,30 @@ server {
 }
 ```
 
-To make the site available we make a symlink that is tored in `sites-enabled`.
+We also want to be able to access the files in the `documents` directory, so lets add another server block.
+
+Add the following under the last server block.
+
+```bash
+server {
+        listen 80;
+        listen [::]:80;
+
+        server_name server-ip;
+
+        root  /var/lib/webgen/documents;
+        
+
+        location /documents {
+
+         try_files $uri $uri/ =404;
+
+}
+
+}
+```
+
+To make the site available we make a symlink that is stored in `sites-enabled`.
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/webgen.conf /etc/nginx/sites-enabled/webgen.conf
