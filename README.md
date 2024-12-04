@@ -427,7 +427,7 @@ sudo ln -s /etc/nginx/sites-available/webgen.conf /etc/nginx/sites-enabled/webge
 To generate our html page run the `generate-index.serivce` file.
 
 ```bash
-sudo systemctl start generate-index.serivce
+sudo systemctl start generate-index
 ```
 
 Run `sudo nginx -t` to see if the `nginx.conf` file is running properly.
