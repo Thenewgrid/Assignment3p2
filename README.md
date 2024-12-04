@@ -370,7 +370,7 @@ http {
 Now paste what you copied into the new file.
 
 ```bash
-sudo nvim /etc/nginx/nginx.conf
+sudo vim /etc/nginx/nginx.conf
 ```
 
 To make the server run as webgen:
