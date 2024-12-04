@@ -199,6 +199,28 @@ Now put `file-one` and `file-two` inside `documents` directory.
 sudo touch /var/lib/webgen/documents/{file-one,file-two}
 ```
 
+Inside `file-one` and `file-two` add text.
+
+```bash
+sudo vim /var/lib/webgen/documents/file-one
+```
+Add the following text.
+
+```code
+This is file-one.
+```
+
+Now for file-two.
+
+```bash
+sudo vim /var/lib/webgen/documents/file-two
+```
+Add the following text.
+
+```code
+This is file-two.
+```
+
 To give ownership of the webgen directory and any files or sub directories inside it to webgen, run;
 
 ```bash
@@ -206,6 +228,10 @@ sudo chown -R webgen:webgen /var/lib/webgen
 ```
 
 Run tree command to make sure your files follow the same directory.
+
+```bash
+tree /var/lib/webgen/
+```
 
 ```bash
 /var/lib/webgen/
