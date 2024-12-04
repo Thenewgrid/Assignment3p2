@@ -396,6 +396,10 @@ sudo touch /etc/nginx/sites-available/webgen.conf
 In the `webgen.conf` file put the following.
 
 ```bash
+sudo vim /etc/nginx/sites-available/webgen.conf
+```
+
+```bash
 server {
         listen 80;
         listen [::]:80;
