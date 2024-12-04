@@ -267,6 +267,12 @@ sudo touch {generate-index.service,generate-index.timer}
 
 #### Service file:
 
+```bash
+sudo vim generate-index.service
+```
+
+Put the following configuration inside.
+
 ```code
 [Unit]
 Description=Runs the generate_index script.
@@ -288,6 +294,12 @@ WantedBy=multi-user.target
 `ExecStart` is the location of the script the service needs to run.
 
 #### Timer file:
+
+```bash
+sudo vim generate-index.timer
+```
+
+Put the following configuration inside.
 
 ```code
 [Unit]
