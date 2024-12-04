@@ -461,12 +461,14 @@ Start the service
 sudo systemctl start nginx
 ```
 
-Reload the service
-
+>Reload nginx if it does not run after start.
+>
+>Reload the service
+>
 ```bash
 sudo systemctl reload nginx
 ```
-Now start the service again.
+>Now start the service again.
 
 Why is it important to use a separate server block file instead of modifying the main 
 nginx.conf file directly?
