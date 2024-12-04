@@ -255,7 +255,15 @@ Make service and timer unit files:
 
 cd into `/etc/systemd/system`.
 
+```bash
+cd /etc/systemd/system
+```
+
 run `sudo touch {generate-index.service,generate-index.timer}`.
+
+```bash
+sudo touch {generate-index.service,generate-index.timer}
+```
 
 #### Service file:
 
