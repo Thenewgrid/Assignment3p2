@@ -415,7 +415,7 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name server-ip;
+        server_name 144.126.213.143;
 
         root  /var/lib/webgen/HTML;
         index index.html;
@@ -426,31 +426,17 @@ server {
 
 }
 
-}
-```
-
-We also want to be able to access the files in the `documents` directory, so lets add another server block.
-
-Add the following under the last server block.
-
-```bash
-server {
-        listen 80;
-        listen [::]:80;
-
-        server_name server-ip;
-
-        root  /var/lib/webgen/documents;
-        
-
-        location /documents {
-
-         try_files $uri $uri/ =404;
-
-}
+ location /documents {
+        root /var/lib/webgen;
+        autoindex on;
+        autoindex_exact_size off;
+        autoindex_localtime on;
+    }
 
 }
 ```
+
+`location /documents`, allows us to access the documents folder.
 
 To make the site available we make a symlink that is stored in `sites-enabled`.
 
@@ -491,7 +477,6 @@ sudo systemctl start nginx
 ```bash
 sudo systemctl reload nginx
 ```
->Now start the service again.
 
 Why is it important to use a separate server block file instead of modifying the main 
 nginx.conf file directly?
